@@ -1,21 +1,15 @@
-<rockr-navbar creation-date="main.creationDate"></rockr-navbar>
+<rockr-navbar></rockr-navbar>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
         <div class="row">
             <div class="col-sm-12 m-b-sm">
-                <img ng-src="http://placehold.it/100/100" class="pull-left m-r-sm">
+                <img ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/vinicius_dacal/128.jpg" class="pull-left m-r-sm img-circle" width="100">
                 <h5 class="m-t-n">Vinicius Dacal Lopes</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-sm-12">
-                <ul class="friends-list">
-                    <li class="friend-item" ng-repeat="i in '123456789'.split('')">
-                    <a href="">
-                        <img ng-src="http://placehold.it/46/46">
-                    </a>
-                    </li>
-                </ul>
+                <friends-list></friends-list>
             </div>
         </div>
     </div>
@@ -23,35 +17,11 @@
         <div class="status-box">
             <div class="row m-b">
                 <div class="col-sm-12">
-                    <form mg-submit="vm.updateStatus()" name="statusForm" novalidate>
-                        <label for="status">What's going on?</label>
-                        <textarea
-                            ng-model="vm.status.message"
-                            name="status"
-                            id="status"
-                            rows="3"
-                            class="form-control m-b-xxs"
-                            required
-                            placeholder="tell us your story"
-                            ></textarea>
-                        <button type="submit" class="btn btn-info pull-right" ng-disabled="!statusForm.$valid">Send</button>
-                    </form>
+                    <status-box></status-box>
                 </div>
             </div>
         </div>
-        <ol class="news-feed">
-            <li class="news-item" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-                <img class="pull-left author-avatar" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}" width="50">
-                <div class="caption">
-                  <h4 class="author-name">{{ awesomeThing.title }}</h4>
-                  <p>
-                    {{ awesomeThing.description }}
-                    <span class="time-lapse">15 min.</span>
-                  </p>
-
-                </div>
-            </li>
-        </ol>
+        <news-feed></news-feed>
     </div>
   </div>
 

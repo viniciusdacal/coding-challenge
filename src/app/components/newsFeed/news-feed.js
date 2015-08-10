@@ -22,11 +22,10 @@
     }
 
     /* @ngInject */
-    function NewsFeedBoxController(newsFeedService) {
+    function NewsFeedBoxController(newsFeedService, $rootScope, moment) {
         var vm = this;
         vm.lastNews = [];
         getLastNews();
-
 
         function getLastNews() {
             newsFeedService.getLastNews()
@@ -36,7 +35,16 @@
                         item.user.profile_image_url = 'https://s3.amazonaws.com/uifaces/faces/twitter/vinicius_dacal/48.jpg';
                     });
                     vm.lastNews = result;
+                    watchStatus();
                 });
+        }
+
+        function watchStatus() {
+            $rootScope.$on('updateStatus', function (event, data) {
+              if(data) {
+                vm.lastNews.push(data);
+              }
+            });
         }
     }
 })();

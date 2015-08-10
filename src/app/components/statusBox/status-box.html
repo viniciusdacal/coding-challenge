@@ -1,0 +1,19 @@
+<form ng-submit="vm.updateStatus()" name="statusForm" novalidate>
+    <label for="status">What's going on?</label>
+    <textarea
+        ng-model="vm.status.message"
+        name="status"
+        id="status"
+        rows="3"
+        class="form-control m-b-xxs"
+        required
+        placeholder="tell us your story"
+        ></textarea>
+    <button
+        type="submit"
+        class="btn btn-info pull-right"
+        ng-disabled="!statusForm.$valid"
+        >
+        Send
+    </button>
+</form>
