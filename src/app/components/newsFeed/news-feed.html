@@ -1,0 +1,14 @@
+<ol class="news-feed">
+    <li class="news-item" ng-repeat="news in vm.lastNews | orderBy:'date'">
+        <img class="pull-left author-avatar img-circle" ng-src="{{ news.user.profile_image_url }}" alt="{{ news.title }}" width="48">
+        <div class="caption">
+          <h4 class="author-name">{{ news.user.name }}</h4>
+          <p>
+            {{ news.text }}
+            <span class="time-lapse">
+                {{ news.relative_time }}
+            </span>
+          </p>
+        </div>
+    </li>
+</ol>
