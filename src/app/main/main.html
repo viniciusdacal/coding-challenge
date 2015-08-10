@@ -1,33 +1,57 @@
+<rockr-navbar creation-date="main.creationDate"></rockr-navbar>
 <div class="container">
-
-  <div>
-    <rockr-navbar creation-date="main.creationDate"></rockr-navbar>
-  </div>
-
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
-  </div>
-
   <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-sm-12 m-b-sm">
+                <img ng-src="http://placehold.it/100/100" class="pull-left m-r-sm">
+                <h5 class="m-t-n">Vinicius Dacal Lopes</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-sm-12">
+                <ul class="friends-list">
+                    <li class="friend-item" ng-repeat="i in '123456789'.split('')">
+                    <a href="">
+                        <img ng-src="http://placehold.it/46/46">
+                    </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="status-box">
+            <div class="row m-b">
+                <div class="col-sm-12">
+                    <form mg-submit="vm.updateStatus()" name="statusForm" novalidate>
+                        <label for="status">What's going on?</label>
+                        <textarea
+                            ng-model="vm.status.message"
+                            name="status"
+                            id="status"
+                            rows="3"
+                            class="form-control m-b-xxs"
+                            required
+                            placeholder="tell us your story"
+                            ></textarea>
+                        <button type="submit" class="btn btn-info pull-right" ng-disabled="!statusForm.$valid">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <ol class="news-feed">
+            <li class="news-item" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+                <img class="pull-left author-avatar" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}" width="50">
+                <div class="caption">
+                  <h4 class="author-name">{{ awesomeThing.title }}</h4>
+                  <p>
+                    {{ awesomeThing.description }}
+                    <span class="time-lapse">15 min.</span>
+                  </p>
+
+                </div>
+            </li>
+        </ol>
     </div>
   </div>
 

@@ -26,6 +26,116 @@
         width: 50px;
     }
 }
+// colors
+@gray: #999;
+@gray-light: #ccc;
+@gray-lighter: #ddd;
+
+// dimensions
+@s-xxs: 5px;
+@s-xs: 10px;
+@s-sm: 15px;
+@s-md: 30px;
+
+@font-md: 16px;
+@font-xxs: 10px;
+
+.m-sm {
+    margin: @s-sm;
+}
+.m-r-sm {
+    margin-right: @s-sm;
+}
+
+.m-l-sm {
+    margin-left: @s-sm;
+}
+
+.m-t-sm {
+    margin-top: @s-sm;
+}
+
+.m-b-sm {
+    margin-bottom: @s-sm;
+}
+
+.m-r-xxs {
+    margin-right: @s-xxs;
+}
+
+.m-l-xxs {
+    margin-left: @s-xxs;
+}
+
+.m-t-xxs {
+    margin-top: @s-xxs;
+}
+
+.m-b-xxs {
+    margin-bottom: @s-xxs;
+}
+
+.m-n {
+    margin: 0;
+}
+.m-r-n {
+    margin-right: 0;
+}
+
+.m-l-n {
+    margin-left: 0;
+}
+
+.m-t-n {
+    margin-top: 0;
+}
+
+.m-b-n {
+    margin-bottom: 0;
+}
+
+.m-b {
+    margin-bottom: @s-md;
+}
+
+// friend-list
+.friends-list {
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-left: -2px;
+    margin-right: -2px;
+    > .friend-item {
+        padding: 2px;
+        display: block;
+        float: left;
+    }
+}
+
+// news feed
+.news-feed {
+    padding: 0;
+    list-style: none;
+    .news-item {
+        position: relative;
+        padding-left: 100px;
+        border-bottom: 1px solid @gray-lighter;
+        .author-name {
+            font-size: @font-md;
+        }
+        .author-avatar {
+            position: absolute;
+            left: @s-sm;
+        }
+        .time-lapse {
+            font-size: @font-xxs;
+            color: @gray;
+        }
+    }
+}
+
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
