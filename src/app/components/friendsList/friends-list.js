@@ -12,7 +12,7 @@
         var directive = {
             bindToController: true,
             controller: FriendsListBoxController,
-            controllerAs: 'vm',
+            controllerAs: 'vmFriends',
             templateUrl: 'app/components/friendsList/friends-list.html',
             restrict: 'E'
         };
@@ -20,18 +20,15 @@
     }
 
     /* @ngInject */
-    function FriendsListBoxController(friendsListService, $scope, $timeout) {
+    function FriendsListBoxController(friendsListService) {
         var vm = this;
-        vm.friendsList = {};
-        vm.friendsList.result = [];
+        vm.friendsList = [];
         getFriendsList();
 
         function getFriendsList() {
             friendsListService.getFriends()
                 .then(function(result){
-                    $timeout(function(){
-                        vm.friendsList.result = result.users;
-                    },100);
+                    vm.friendsList = result.users;
                 });
         }
     }
