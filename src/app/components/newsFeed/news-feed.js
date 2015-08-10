@@ -31,7 +31,8 @@
             newsFeedService.getLastNews()
                 .then(function(result){
                     angular.forEach(result, function(item){
-                        item.relative_time = moment(new Date(item.created_at)).fromNow();
+                        item.created_at = new Date(item.created_at);
+                        item.relative_time = moment(item.created_at).fromNow();
                         item.user.profile_image_url = 'https://s3.amazonaws.com/uifaces/faces/twitter/vinicius_dacal/48.jpg';
                     });
                     vm.lastNews = result;
