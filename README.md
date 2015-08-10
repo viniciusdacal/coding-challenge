@@ -27,4 +27,5 @@ $ gulp serve
 
 ## project details.
 
-This project follows [Angular Style Guide](https://github.com/johnpapa/angular-styleguide), by @john_papa.
+This project follows [Angular Style Guide](https://github.com/johnpapa/angular-styleguide), by @john_papa, and uses
+[Angular rockr](https://github.com/viniciusdacal/generator-angular-rockr) as project scaffold
